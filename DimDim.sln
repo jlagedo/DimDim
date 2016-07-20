@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "DimDim.Web", "src\DimDim.Web\DimDim.Web.xproj", "{8E025C9B-A243-4E84-9942-6CF9B1DB4987}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "DimDim.Model", "src\DimDim.Model\DimDim.Model.xproj", "{CF173BAB-4504-47DA-9861-9131194714A8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E025C9B-A243-4E84-9942-6CF9B1DB4987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E025C9B-A243-4E84-9942-6CF9B1DB4987}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E025C9B-A243-4E84-9942-6CF9B1DB4987}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E025C9B-A243-4E84-9942-6CF9B1DB4987}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF173BAB-4504-47DA-9861-9131194714A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF173BAB-4504-47DA-9861-9131194714A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF173BAB-4504-47DA-9861-9131194714A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF173BAB-4504-47DA-9861-9131194714A8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
