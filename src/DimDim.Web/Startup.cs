@@ -1,4 +1,7 @@
-﻿using DimDim.Model.Services;
+﻿using DimDim.Infra.Data;
+using DimDim.Infra.Repositories;
+using DimDim.Model.Repositories;
+using DimDim.Model.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,6 +15,9 @@ namespace DimDim.Web
         {
             services.AddMvc();
             services.AddScoped<IDespesaService, DespesaService>();
+            services.AddScoped<IDespesaRepository, DespesaRepository>();
+            services.AddScoped<DimDimDbContext, DimDimDbContext>();
+            
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)

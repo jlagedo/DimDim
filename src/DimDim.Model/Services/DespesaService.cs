@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DimDim.Model.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,6 +8,13 @@ namespace DimDim.Model.Services
 {
     public class DespesaService : IDespesaService
     {
+        private readonly IDespesaRepository repository;
+
+        public DespesaService(IDespesaRepository repository)
+        {
+            this.repository = repository;
+        }
+
         public Despesa Registrar(string descricao, decimal valor, DateTimeOffset data)
         {
             var despesa = new Despesa
@@ -17,9 +25,7 @@ namespace DimDim.Model.Services
             };
 
             //TODO: Salvar no bando de dados
-            despesa.Id = 1;
-
-            return despesa;
+            return repository.Insert(despesa);
         }
     }
 }
