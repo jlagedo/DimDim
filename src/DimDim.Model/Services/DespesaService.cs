@@ -1,4 +1,5 @@
-﻿using DimDim.Model.Repositories;
+﻿using DimDim.Model.Command;
+using DimDim.Model.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,13 +21,13 @@ namespace DimDim.Model.Services
             return repository.ObterTodas();
         }
 
-        public Despesa Registrar(string descricao, decimal valor, DateTimeOffset data)
+        public Despesa Registrar(RegistroDespesaCommand despesaCommand)
         {
             var despesa = new Despesa
             {
-                Valor = valor,
-                Descricao = descricao,
-                Data = data
+                Valor = despesaCommand.Valor,
+                Descricao = despesaCommand.Descricao,
+                Data = despesaCommand.Data
             };
 
             //TODO: Salvar no bando de dados

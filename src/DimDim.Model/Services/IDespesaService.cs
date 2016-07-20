@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DimDim.Model.Command;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ namespace DimDim.Model.Services
 {
     public interface IDespesaService
     {
-        Despesa Registrar(string descricao, decimal valor, DateTimeOffset data);
+        Despesa Registrar(RegistroDespesaCommand despesaCommand);
         IEnumerable<Despesa> ObterTodas();
         Task RemoverAsync(int id);
     }

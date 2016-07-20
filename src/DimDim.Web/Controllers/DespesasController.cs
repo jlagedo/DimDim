@@ -1,4 +1,5 @@
-﻿using DimDim.Model.Services;
+﻿using DimDim.Model.Command;
+using DimDim.Model.Services;
 using DimDim.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -33,7 +34,12 @@ namespace DimDim.Web.Controllers
         [HttpPost]
         public IActionResult Registro(RegistroDespesaViewModel vm)
         {
-            var despesa = despesaService.Registrar(vm.Descricao, vm.Valor, vm.Data);
+            var despesaCommand = new RegistroDespesaCommand {
+                Data = vm.Data,
+                Descricao = vm.Descricao,
+                Valor = vm.Valor
+            };
+            var despesa = despesaService.Registrar(despesaCommand);
             return RedirectToAction("Index");
         }
 
