@@ -1,10 +1,8 @@
-﻿using DimDim.Model.Repositories;
-using System;
+﻿using DimDim.Infra.Data;
+using DimDim.Model;
+using DimDim.Model.Repositories;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using DimDim.Model;
-using DimDim.Infra.Data;
 
 namespace DimDim.Infra.Repositories
 {
@@ -23,6 +21,11 @@ namespace DimDim.Infra.Repositories
             context.SaveChanges();
 
             return despesa;
+        }
+
+        public IEnumerable<Despesa> ObterTodas()
+        {
+            return context.Despesas.OrderBy(x => x.Data).ToList();
         }
     }
 }

@@ -8,7 +8,7 @@ using DimDim.Infra.Data;
 namespace DimDim.Web.Migrations
 {
     [DbContext(typeof(DimDimDbContext))]
-    [Migration("20160720191411_addDespesas")]
+    [Migration("20160720193717_addDespesas")]
     partial class addDespesas
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

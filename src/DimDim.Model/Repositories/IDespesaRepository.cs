@@ -8,5 +8,6 @@ namespace DimDim.Model.Repositories
     public interface IDespesaRepository
     {
         Despesa Insert(Despesa despesa);
+        IEnumerable<Despesa> ObterTodas();
     }
 }

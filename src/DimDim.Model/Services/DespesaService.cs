@@ -15,6 +15,11 @@ namespace DimDim.Model.Services
             this.repository = repository;
         }
 
+        public IEnumerable<Despesa> ObterTodas()
+        {
+            return repository.ObterTodas();
+        }
+
         public Despesa Registrar(string descricao, decimal valor, DateTimeOffset data)
         {
             var despesa = new Despesa

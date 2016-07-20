@@ -4,8 +4,7 @@
   "dependencies": {
     "DimDim.Model": "1.0.0-*",
     "NETStandard.Library": "1.6.0",
-    "Microsoft.EntityFrameworkCore": "1.0.0",
-    "Microsoft.EntityFrameworkCore.SqlServer": "1.0.0"
+    "Microsoft.EntityFrameworkCore": "1.0.0"
   },
 
   "frameworks": {

@@ -19,7 +19,9 @@ namespace DimDim.Web.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var despesas = despesaService.ObterTodas();
+            var vm = new ListaDespesaViewModel { Despesas = despesas };            
+            return View(vm);
         }
 
         public IActionResult Registro()
