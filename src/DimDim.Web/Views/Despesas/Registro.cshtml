@@ -3,7 +3,20 @@
     ViewBag.Title = "Registro de Despesa";
 }
 
-<form asp-route="Registro">
+<form asp-action="Registro">
 
+    <label asp-for="Valor"></label>
+    <input asp-for="Valor" />
+    <br />
+
+    <label asp-for="Data"></label>
+    <input asp-for="Data" />
+    <br />
+
+    <label asp-for="Descricao"></label>
+    <input asp-for="Descricao" />
+    <br />
+
+    <input type="submit" value="Registrar" />
 
 </form>

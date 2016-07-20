@@ -1,4 +1,5 @@
-﻿using DimDim.Web.ViewModels;
+﻿using DimDim.Model.Services;
+using DimDim.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,13 @@ namespace DimDim.Web.Controllers
 {
     public class DespesasController : Controller
     {
+        private readonly IDespesaService despesaService;
+
+        public DespesasController(IDespesaService despesaService)
+        {
+            this.despesaService = despesaService;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -18,6 +26,13 @@ namespace DimDim.Web.Controllers
         {
             var vm = new RegistroDespesaViewModel();
             return View(vm);
+        }
+
+        [HttpPost]
+        public IActionResult Registro(RegistroDespesaViewModel vm)
+        {
+            var despesa = despesaService.Registrar(vm.Descricao, vm.Valor, vm.Data);
+            return RedirectToAction("Index");
         }
     }
 }

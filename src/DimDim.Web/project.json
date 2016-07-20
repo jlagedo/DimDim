@@ -12,7 +12,8 @@
     "Microsoft.AspNetCore.Razor.Tools": {
       "version": "1.0.0-preview2-final",
       "type": "build"
-    }
+    },
+    "DimDim.Model": "1.0.0-*"
   },
 
   "tools": {
