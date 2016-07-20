@@ -9,5 +9,6 @@ namespace DimDim.Model.Repositories
     {
         Despesa Insert(Despesa despesa);
         IEnumerable<Despesa> ObterTodas();
+        Task RemoverAsync(int id);
     }
 }

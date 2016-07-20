@@ -36,5 +36,11 @@ namespace DimDim.Web.Controllers
             var despesa = despesaService.Registrar(vm.Descricao, vm.Valor, vm.Data);
             return RedirectToAction("Index");
         }
+
+        public async Task<IActionResult> Remover(int id)
+        {
+            await despesaService.RemoverAsync(id);
+            return RedirectToAction("Index");
+        }
     }
 }

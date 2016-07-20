@@ -32,5 +32,10 @@ namespace DimDim.Model.Services
             //TODO: Salvar no bando de dados
             return repository.Insert(despesa);
         }
+
+        public Task RemoverAsync(int id)
+        {
+            return repository.RemoverAsync(id);
+        }
     }
 }

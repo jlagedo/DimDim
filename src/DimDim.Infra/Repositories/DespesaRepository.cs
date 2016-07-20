@@ -3,6 +3,9 @@ using DimDim.Model;
 using DimDim.Model.Repositories;
 using System.Collections.Generic;
 using System.Linq;
+using System;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace DimDim.Infra.Repositories
 {
@@ -26,6 +29,18 @@ namespace DimDim.Infra.Repositories
         public IEnumerable<Despesa> ObterTodas()
         {
             return context.Despesas.OrderBy(x => x.Data).ToList();
+        }
+
+        public async Task RemoverAsync(int id)
+        {
+            var despesa = await context.Despesas.FirstOrDefaultAsync(x => x.Id == id);
+            if (despesa == null)
+            {
+                return;
+            }
+            context.Despesas.Remove(despesa);
+
+            await context.SaveChangesAsync();
         }
     }
 }
