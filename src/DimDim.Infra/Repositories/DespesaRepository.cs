@@ -31,16 +31,17 @@ namespace DimDim.Infra.Repositories
             return context.Despesas.OrderBy(x => x.Data).ToList();
         }
 
-        public async Task RemoverAsync(int id)
+        public async Task<bool> RemoverAsync(int id)
         {
             var despesa = await context.Despesas.FirstOrDefaultAsync(x => x.Id == id);
             if (despesa == null)
             {
-                return;
+                return false;
             }
             context.Despesas.Remove(despesa);
 
-            await context.SaveChangesAsync();
+            int s = await context.SaveChangesAsync();
+            return (s > 0);
         }
     }
 }

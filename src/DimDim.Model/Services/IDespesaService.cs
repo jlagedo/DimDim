@@ -10,6 +10,6 @@ namespace DimDim.Model.Services
     {
         Despesa Registrar(RegistroDespesaCommand despesaCommand);
         IEnumerable<Despesa> ObterTodas();
-        Task RemoverAsync(int id);
+        Task<bool> RemoverAsync(int id);
     }
 }

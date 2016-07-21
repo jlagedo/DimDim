@@ -34,7 +34,7 @@ namespace DimDim.Model.Services
             return repository.Insert(despesa);
         }
 
-        public Task RemoverAsync(int id)
+        public Task<bool> RemoverAsync(int id)
         {
             return repository.RemoverAsync(id);
         }
